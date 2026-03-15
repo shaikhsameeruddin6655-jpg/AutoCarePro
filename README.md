@@ -17,7 +17,7 @@ A professional, fully-responsive car workshop website built with HTML5, CSS3, an
 ## 📁 Files
 
 ```
-V-Services/
+AutoCare-Pro/
 ├── index.html          # Home page
 ├── services.html       # Services page
 ├── mechanics.html      # Mechanics page
