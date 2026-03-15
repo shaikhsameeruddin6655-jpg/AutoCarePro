@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service Booking - AutoCare Pro</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-car"></i>
+                <span>AutoCare Pro</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="services.html" class="nav-link">Services</a></li>
+                <li><a href="mechanics.html" class="nav-link">Mechanics</a></li>
+                <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+                <li><a href="booking.html" class="nav-link active">Booking</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Book Your Service</h1>
+            <p>Schedule your vehicle service with our expert mechanics</p>
+        </div>
+    </section>
+
+    <!-- Booking Section -->
+    <section class="booking-section">
+        <div class="container">
+            <div class="booking-container">
+                <div class="booking-form">
+                    <h2>Service Booking Form</h2>
+                    <form id="service-booking-form">
+                        <div class="form-group">
+                            <label for="customer-name">Customer Name *</label>
+                            <input type="text" id="customer-name" name="customer-name" required>
+                            <span class="error-message"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" required>
+                            <span class="error-message"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Phone Number *</label>
+                            <input type="tel" id="phone" name="phone" required>
+                            <span class="error-message"></span>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="car-brand">Car Brand *</label>
+                                <select id="car-brand" name="car-brand" required>
+                                    <option value="">Select Brand</option>
+                                    <option value="Maruti Suzuki">Maruti Suzuki</option>
+                                    <option value="Hyundai">Hyundai</option>
+                                    <option value="Tata">Tata</option>
+                                    <option value="Mahindra">Mahindra</option>
+                                    <option value="Honda">Honda</option>
+                                    <option value="Toyota">Toyota</option>
+                                    <option value="Kia">Kia</option>
+                                    <option value="MG">MG</option>
+                                    <option value="Renault">Renault</option>
+                                    <option value="Skoda">Skoda</option>
+                                    <option value="Volkswagen">Volkswagen</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                                <span class="error-message"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="car-model">Car Model *</label>
+                                <input type="text" id="car-model" name="car-model" required>
+                                <span class="error-message"></span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Selected Services</label>
+                            <div id="selected-services-list" class="selected-services-list">
+                                <p>No services selected. <a href="services.html">Select services here</a></p>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="preferred-date">Preferred Date *</label>
+                                <input type="date" id="preferred-date" name="preferred-date" required>
+                                <span class="error-message"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="service-type">Service Type *</label>
+                                <select id="service-type" name="service-type" required>
+                                    <option value="">Select Type</option>
+                                    <option value="normal">Normal Service</option>
+                                    <option value="express">Express Service (+20%)</option>
+                                </select>
+                                <span class="error-message"></span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="additional-notes">Additional Notes</label>
+                            <textarea id="additional-notes" name="additional-notes" rows="4" placeholder="Any specific requirements or issues..."></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Payment Methods</label>
+                            <div style="display: flex; gap: 15px; flex-wrap: wrap; margin-top: 10px;">
+                                <span style="background: #e8f5e8; padding: 5px 10px; border-radius: 5px; font-size: 0.9rem;">💳 UPI</span>
+                                <span style="background: #e8f5e8; padding: 5px 10px; border-radius: 5px; font-size: 0.9rem;">💰 Cash</span>
+                                <span style="background: #e8f5e8; padding: 5px 10px; border-radius: 5px; font-size: 0.9rem;">🏦 Bank Transfer</span>
+                                <span style="background: #e8f5e8; padding: 5px 10px; border-radius: 5px; font-size: 0.9rem;">💳 Card</span>
+                            </div>
+                        </div>
+
+                        <button type="submit" id="submit-booking" class="btn btn-primary" disabled>Submit Booking</button>
+                    </form>
+                </div>
+
+                <div class="booking-summary">
+                    <div class="summary-card">
+                        <h3>Booking Summary</h3>
+                        <div id="booking-summary-content">
+                            <p>Please fill in the form to see your booking summary.</p>
+                        </div>
+                        <div class="cost-breakdown" id="cost-breakdown" style="display: none;">
+                            <h4>Cost Breakdown</h4>
+                            <div class="cost-item">
+                                <span>Service Cost:</span>
+                                <span id="service-cost">₹0</span>
+                            </div>
+                            <div class="cost-item">
+                                <span>Service Type Surcharge:</span>
+                                <span id="surcharge">₹0</span>
+                            </div>
+                            <div class="cost-item">
+                                <span>GST (18%):</span>
+                                <span id="gst">₹0</span>
+                            </div>
+                            <div class="cost-item total">
+                                <span>Total Cost:</span>
+                                <span id="total-cost">₹0</span>
+                            </div>
+                            <small style="display: block; margin-top: 10px; color: #666;">*All prices inclusive of GST</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Success Modal -->
+    <div id="success-modal" class="modal">
+        <div class="modal-content">
+            <div class="success-icon">
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <h2>Booking Confirmed!</h2>
+            <p>Your service booking has been successfully submitted. We will contact you shortly to confirm the details.</p>
+            <button class="btn btn-primary" onclick="closeSuccessModal()">Close</button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>AutoCare Pro</h3>
+                    <p>Expert Car Care by Highly Trained Mechanics</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="services.html">Our Services</a></li>
+                        <li><a href="mechanics.html">Meet Our Team</a></li>
+                        <li><a href="booking.html">Book Service</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> MG Road, Bengaluru, Karnataka 560001</p>
+                    <p><i class="fas fa-phone"></i> +91 98765 43210</p>
+                    <p><i class="fas fa-envelope"></i> info@autocarepro.in</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 AutoCare Pro. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
